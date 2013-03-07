@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+ActiveRecord::Base.send(:extend, ActsAsModelWithStatus::Hook)
+
 class MyModel < ActiveRecord::Base
 end
 
@@ -19,7 +21,7 @@ end
 describe ActsAsModelWithStatus do
 
   before :each do
-    initalize_database
+    initialize_database
   end
 
   subject { BasicModel.new }

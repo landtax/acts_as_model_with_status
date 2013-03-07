@@ -1,4 +1,4 @@
-module ActsAsModelWithStatus::ClassMethods
+module ActsAsModelWithStatus::InstanceMethods
 
   def status
     status_id = read_attribute :status
