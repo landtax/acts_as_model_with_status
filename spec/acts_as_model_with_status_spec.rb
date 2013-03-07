@@ -1,12 +1,5 @@
 require 'spec_helper'
 
-ActiveRecord::Base.establish_connection( :adapter => "sqlite3", :database => ":memory:")
-ActiveRecord::Base.connection.execute("DROP TABLE IF EXISTS 'my_models'")
-ActiveRecord::Base.connection.create_table(:my_models) do |t|
-  t.integer :my_status
-  t.timestamps
-end
-
 class MyModel < ActiveRecord::Base
 end
 
@@ -29,7 +22,7 @@ describe ActsAsModelWithStatus do
     initalize_database
   end
 
-  subject {BasicModel.new}
+  subject { BasicModel.new }
 
   it "should return version" do
     ActsAsModelWithStatus::VERSION.should == "0.0.1"
@@ -37,11 +30,6 @@ describe ActsAsModelWithStatus do
 
   it "test" do
     subject.should_not be_nil
-
-
   end
-
-
-
 
 end
