@@ -1,29 +1,22 @@
 module ActsAsModelWithStatus::InstanceMethods
 
   def status
-    status_id = read_attribute :status
-    @_invert_statuses[status_id] if status_id
+    status_key read_attribute(:status)
   end
 
-  def status= value
-    status_id = @_statuses[value]
-    write_attribute :status, status_id  if status_id
+  def status= key
+    write_attribute :status, status_value(key)
   end
 
-  def initialized?
-    status == :initialized
+
+  private
+
+  def status_key(value)
+    invert_available_statuses[value]
   end
 
-  def running?
-    status == :running
-  end
-
-  def finished?
-    status == :finished
-  end
-
-  def error?
-    status == :error
+  def status_value(key)
+    available_statuses[key]
   end
 
 end

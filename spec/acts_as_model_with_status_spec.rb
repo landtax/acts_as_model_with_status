@@ -24,14 +24,17 @@ describe ActsAsModelWithStatus do
     initialize_database
   end
 
-  subject { BasicModel.new }
+  describe "Handle status" do
+    subject { BasicModel.new }
 
-  it "should return version" do
-    ActsAsModelWithStatus::VERSION.should == "0.0.1"
+    its (:status) { be_nil }
+
+    it "must update status" do
+      subject.status = :new
+      subject.status.should == :new
+    end
+
   end
 
-  it "test" do
-    subject.should_not be_nil
-  end
 
 end
