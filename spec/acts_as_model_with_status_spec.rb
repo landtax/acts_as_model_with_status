@@ -55,7 +55,6 @@ describe ActsAsModelWithStatus do
     its(:status_culumn) { eq :status}
     its(:default_status) {eq :running}
     its(:status) {eq  :running }
-
   end
 
   describe "Use custom column name" do
