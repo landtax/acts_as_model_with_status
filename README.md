@@ -63,7 +63,7 @@ job.status
 - Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 ## Thanks to
-- http://iula.upf.edu. Universitat Pompeu Fabra. Institut Universitari de Lingüística Aplicada (IULA) 
+- http://www.iula.upf.edu. Universitat Pompeu Fabra. Institut Universitari de Lingüística Aplicada (IULA) 
 - https://github.com/swanandp This readme is almost a copy :)
 
 ## Copyright
